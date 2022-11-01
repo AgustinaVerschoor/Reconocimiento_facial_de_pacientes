@@ -17,7 +17,7 @@ with mp_face_detection.FaceDetection(min_detection_confidence=0.5) as face_detec
         frame_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
         results = face_detection.process(frame_rgb)
 
-        if results.detection is not None:
+        if results.detections is not None:
             for detection in results.detections:
                 #Ojo 1
                 x1 = int(detection.location_data.relative_keypoints[0].x*width)
@@ -43,7 +43,7 @@ with mp_face_detection.FaceDetection(min_detection_confidence=0.5) as face_detec
                     angle = -angle
 
                 #Rotar la imagen de entrada, para alinear el rostro
-                M = cv2.getRotationMatrix20((width // 2, height // 2), -angle, 1)
+                M = cv2.getRotationMatrix2D((width // 2, height // 2), -angle, 1)
                 aligned_image = cv2.warpAffine(frame, M, (width, height))
                 cv2.imshow("Aligned_image", aligned_image)
 
