@@ -4,7 +4,7 @@ import imutils
 from time import sleep
 
 personName = 'Maxi'
-dataPath = 'C:/Users/agusv/PycharmProjects/Reconocimiento_facial_de_pacientes/Database'
+dataPath = '/Users/maxiadaro/sandbox/austral/visiar_Agus/Reconocimiento_facial_de_pacientes/Database'
 personPath = dataPath + '/' + personName
 ##########################################
 if not os.path.exists(personPath): #chequea si existe la carpeta. si no existe la crea
@@ -12,12 +12,13 @@ if not os.path.exists(personPath): #chequea si existe la carpeta. si no existe l
     os.makedirs(personPath)
 
 
-cap = cv.VideoCapture(0, cv.CAP_DSHOW)
+cap = cv.VideoCapture(0)
 
 
 faceClassif = cv.CascadeClassifier(cv.data.haarcascades + 'haarcascade_frontalface_default.xml')
 count = 0
 
+PHOTOS_TO_TAKE = 300
 
 while True:
 
@@ -40,7 +41,7 @@ while True:
 
     cv.imshow('frame', frame)
 
-    if cv.waitKey(1) == 27 or count >= 50:
+    if cv.waitKey(1) == 27 or count >= PHOTOS_TO_TAKE:
         break
 
 cap.release()
