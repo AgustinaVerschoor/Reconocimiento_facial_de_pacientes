@@ -1,8 +1,9 @@
 import cv2 as cv
 import os
 import imutils
+from time import sleep
 
-personName = 'Sofi'
+personName = 'Maxi'
 dataPath = 'C:/Users/agusv/PycharmProjects/Reconocimiento_facial_de_pacientes/Database'
 personPath = dataPath + '/' + personName
 ##########################################
@@ -13,6 +14,7 @@ if not os.path.exists(personPath): #chequea si existe la carpeta. si no existe l
 
 cap = cv.VideoCapture(0, cv.CAP_DSHOW)
 
+
 faceClassif = cv.CascadeClassifier(cv.data.haarcascades + 'haarcascade_frontalface_default.xml')
 count = 0
 
@@ -20,7 +22,7 @@ count = 0
 while True:
 
     ret, frame = cap.read()
-    if ret == False:
+    if not ret:
         break
     frame = imutils.resize(frame, width = 640)
     gray = cv.cvtColor(frame, cv.COLOR_BGR2GRAY)
@@ -33,11 +35,12 @@ while True:
         rostro = auxFrame[y:y + h, x:x + w]
         rostro = cv.resize(rostro, (720, 720), interpolation = cv.INTER_CUBIC)
         cv.imwrite(personPath + '/rostro_{}.jpg'.format(count), rostro)
-        count = count + 1
+
+    count = count + 1
 
     cv.imshow('frame', frame)
 
-    if cv.waitKey(1) == 27 or count >= 100:
+    if cv.waitKey(1) == 27 or count >= 50:
         break
 
 cap.release()

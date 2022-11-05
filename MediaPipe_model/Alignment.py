@@ -19,9 +19,9 @@ with mp_face_detection.FaceDetection(min_detection_confidence=0.5) as face_detec
 
         if results.detections is not None:
             for detection in results.detections:
-                #Ojo 1
-                x1 = int(detection.location_data.relative_keypoints[0].x*width)
-                y1 = int(detection.location_data.relative_keypoints[0].y*height)
+                # Ojo 1
+                x1 = int(detection.location_data.relative_keypoints[0].x * width)
+                y1 = int(detection.location_data.relative_keypoints[0].y * height)
 
                 # Ojo 2
                 x2 = int(detection.location_data.relative_keypoints[1].x * width)
@@ -31,37 +31,37 @@ with mp_face_detection.FaceDetection(min_detection_confidence=0.5) as face_detec
                 p2 = np.array([x2, y2])
                 p3 = np.array([x2, y1])
 
-                #Obtenemos las distancias de: d_eyes, l1
+                # Obtenemos las distancias de: d_eyes, l1
                 d_eyes = np.linalg.norm(p1 - p2)
                 l1 = np.linalg.norm(p1 - p3)
 
-                #Calcular el angulo formado por d_eyes y l1
-                angle = degrees(acos(l1/ d_eyes))
+                # Calcular el angulo formado por d_eyes y l1
+                angle = degrees(acos(l1 / d_eyes))
 
-                #Determinar si el angulo es positivo o negativo
+                # Determinar si el angulo es positivo o negativo
                 if y1 < y2:
                     angle = -angle
 
-                #Rotar la imagen de entrada, para alinear el rostro
+                # Rotar la imagen de entrada, para alinear el rostro
                 M = cv2.getRotationMatrix2D((width // 2, height // 2), -angle, 1)
                 aligned_image = cv2.warpAffine(frame, M, (width, height))
                 cv2.imshow("Aligned_image", aligned_image)
 
-                #Visualizar datos
+                # Visualizar datos
                 cv2.putText(frame, "Ojo1", (x1 - 60, y1), 1, 1.5, (0, 255, 0), 2)
                 cv2.putText(frame, "Ojo2", (x2 + 10, y2), 1, 1.5, (0, 128, 255), 2)
                 cv2.putText(frame, str(int(angle)), (x1 - 35, y1 + 15), 1, 1.2, (0, 255, 0), 2)
 
-                #Lados del triangulo
+                # Lados del triangulo
                 cv2.line(frame, (x1, y1), (x2, y2), (0, 255, 0), 2)
                 cv2.line(frame, (x1, y1), (x2, y1), (211, 0, 148), 2)
                 cv2.line(frame, (x2, y2), (x2, y1), (0, 128, 255), 2)
 
-                #Circulos en cada uno de los vertices del triangulo
+                # Circulos en cada uno de los vertices del triangulo
                 cv2.circle(frame, (x1, y1), 5, (0, 255, 0), -1)
                 cv2.circle(frame, (x2, y2), 5, (0, 128, 255), -1)
 
-                #Deteccion facial 2
+                # Deteccion facial 2
                 results2 = face_detection.process(cv2.cvtColor(aligned_image, cv2.COLOR_BGR2RGB))
 
                 if results2.detections is not None:
@@ -73,12 +73,11 @@ with mp_face_detection.FaceDetection(min_detection_confidence=0.5) as face_detec
 
                         if xmin < 0 or ymin < 0:
                             continue
-
-                        aligned_face = aligned_image[ymin : ymin + h, xmin + w]
-                        cv2.imshow("aligned_face", aligned_face)
-
-
-
+                        try:
+                            aligned_face = aligned_image[ymin: ymin + h, xmin + w]
+                            cv2.imshow("aligned_face", aligned_face)
+                        except IndexError:
+                            print("Put the entire face in the frame, index out of bound")
 
 
 
