@@ -4,7 +4,7 @@ import os
 i = '4'
 
 # dataPath = 'C:/Users/agusv/PycharmProjects/Reconocimiento_facial_de_pacientes/Database'
-dataPath = '/Users/maxiadaro/sandbox/austral/visiar_Agus/Reconocimiento_facial_de_pacientes/Database_' + i
+dataPath = 'C:/Users/agusv/PycharmProjects/Reconocimiento_facial_de_pacientes/Database_' + i
 
 imagePaths = os.listdir(dataPath)
 print('imagePath = ', imagePaths)
@@ -20,7 +20,7 @@ cap = cv.VideoCapture(0)
 faceClassif = cv.CascadeClassifier(cv.data.haarcascades + 'haarcascade_frontalface_default.xml')
 # print(faceClassif)
 
-cut_param = 20700
+cut_param = 30700
 
 while True:
     ret, frame = cap.read()

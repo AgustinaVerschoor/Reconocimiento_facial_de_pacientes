@@ -5,7 +5,7 @@ import numpy as np
 i = '4'
 
 # dataPath = 'C:/Users/agusv/PycharmProjects/Reconocimiento_facial_de_pacientes/Database'
-dataPath = '/Users/maxiadaro/sandbox/austral/visiar_Agus/Reconocimiento_facial_de_pacientes/Database_' + i
+dataPath = 'C:/Users/agusv/PycharmProjects/Reconocimiento_facial_de_pacientes/Database_' + i
 
 peopleList = os.listdir(dataPath)
 print('people list: ', peopleList)
