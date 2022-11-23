@@ -15,12 +15,12 @@
 
 <h2> Índice <h2/>
 
-* [Introduccion](https://github.com/AgustinaVerschoor/Reconocimiento_facial_de_pacientes/edit/master/README.md#-introduccion-)
-* [Objetivos](https://github.com/AgustinaVerschoor/Reconocimiento_facial_de_pacientes/edit/master/README.md#-objetivos-)
-* [Descripción del proyecto](https://github.com/AgustinaVerschoor/Reconocimiento_facial_de_pacientes/edit/master/README.md#-descripcion-del-proyecto-)
-* [Instalacion](https://github.com/AgustinaVerschoor/Reconocimiento_facial_de_pacientes/edit/master/README.md#-instalacion-wrench-)
-* [Funcionamiento](https://github.com/AgustinaVerschoor/Reconocimiento_facial_de_pacientes/edit/master/README.md#-funcionamiento-hammer-)
-* [Tecnologías utilizadas](https://github.com/AgustinaVerschoor/Reconocimiento_facial_de_pacientes/edit/master/README.md#-tecnologias-utilizadas-computer-)
+* [Introduccion](https://github.com/AgustinaVerschoor/Reconocimiento_facial_de_pacientes/blob/master/README.md#-introduccion-)
+* [Objetivos](https://github.com/AgustinaVerschoor/Reconocimiento_facial_de_pacientes/blob/master/README.md#-objetivos-)
+* [Descripción del proyecto](https://github.com/AgustinaVerschoor/Reconocimiento_facial_de_pacientes/blob/master/README.md#-descripcion-del-proyecto-)
+* [Instalacion](https://github.com/AgustinaVerschoor/Reconocimiento_facial_de_pacientes/blob/master/README.md#-instalacion-wrench-)
+* [Funcionamiento](https://github.com/AgustinaVerschoor/Reconocimiento_facial_de_pacientes/blob/master/README.md#-funcionamiento-hammer-)
+* [Tecnologías utilizadas](https://github.com/AgustinaVerschoor/Reconocimiento_facial_de_pacientes/blob/master/README.md#-tecnologias-utilizadas-computer-)
   
 <h2> Introduccion </h2>
 
