@@ -1,18 +1,5 @@
 <h1 align="center"> Identificacion de usuarios mediante Reconocimiento Facial </h1>
 <h1 align="center"> <img width="194" alt="image" src="https://user-images.githubusercontent.com/72108904/203089320-a75427f2-866b-4701-ae2d-25b2023565cc.png"> </h1>
-<h2> Índice <h2/>
-
-* [Título e imagen de portada](#Título-e-imagen-de-portada)
-* [Índice](#índice)
-* [Participantes](#participantes)
-* [Docentes](#docentes)
-* [Introduccion](#introduccion)
-* [Objetivos](#objetivos)
-* [Descripción del proyecto](#descripción-del-proyecto)
-* [Instalacion](#instalacion)
-* [Funcionamiento](#Características-de-la-aplicación-y-demostración)
-* [Tecnologías utilizadas](#tecnologías-utilizadas)
-* [Conclusión](#conclusión)
 
 <h2> Participantes </h2>
 
@@ -26,6 +13,15 @@
 - Alejandro Silvestri
 - Fabrizio Di Santo 
 
+<h2> Índice <h2/>
+
+* [Introduccion](https://github.com/AgustinaVerschoor/Reconocimiento_facial_de_pacientes/edit/master/README.md#-introduccion-)
+* [Objetivos](https://github.com/AgustinaVerschoor/Reconocimiento_facial_de_pacientes/edit/master/README.md#-objetivos-)
+* [Descripción del proyecto](https://github.com/AgustinaVerschoor/Reconocimiento_facial_de_pacientes/edit/master/README.md#-descripcion-del-proyecto-)
+* [Instalacion](https://github.com/AgustinaVerschoor/Reconocimiento_facial_de_pacientes/edit/master/README.md#-instalacion-wrench-)
+* [Funcionamiento](https://github.com/AgustinaVerschoor/Reconocimiento_facial_de_pacientes/edit/master/README.md#-funcionamiento-hammer-)
+* [Tecnologías utilizadas](https://github.com/AgustinaVerschoor/Reconocimiento_facial_de_pacientes/edit/master/README.md#-tecnologias-utilizadas-computer-)
+  
 <h2> Introduccion </h2>
 
 Hoy en día, dentro del sistema de salud, uno de los problemas más frecuentes es la identificación de los pacientes que se encuentran dentro de la institución. Suele haber múltiples chequeos de identidad de los mismos, para evitar confusiones. Esta reiterada acción de control de identidad, requiere de más trabajo y más tiempo por parte de los profesionales de salud. El problema identificado, está en que no se puede identificar al paciente por número de habitación ni de camilla, ya que en esos contextos aparecen los errores, pues estos no permanecen en las mismas durante todo el recorrido dentro del sistema. Lo más seguro es que la identificación del paciente, esté siempre con el mismo, independientemente de la camilla u habitación, por lo tanto la solución propuesta en este proyecto, es el reconocimiento facial para la identificación de pacientes dentro de un hospital.
@@ -159,7 +155,13 @@ IMP!: Se debe apuntar la cámara a la persona cargada en la carpeta, y no debe a
 <h4> 4. Reconocimiento facial: </h4>
    i. Una vez cargada la nueva persona, y entrenado el modelo .xml, se deberá correr la clase Recognizer.py, para el reconocimiento facial. Se prendera la cámara nuevamente, y se reconoceran los rostros capturados en ella, y se los recuadrada. Si la persona frente a la cámara está registrada en la base de datos, entonces su rostro estará rodeado por un rectángulo verde y aparecerá una etiqueta con su nombre. Si la persona no esta registrada, entonces el rectángulo será rojo y la etiqueta dirá: “Unknown” (desconocido). 
 
-  
+<h2> Tecnologias utilizadas :computer: </h2>
+
+- Pyhton 3.9
+- Pycharm
+- Open Cv
+- OS
+- modelo Haarcascade
 
 
 
